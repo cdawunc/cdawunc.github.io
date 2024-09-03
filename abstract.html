@@ -13,6 +13,20 @@
 
 <script type="text/javascript">
 
+    let qs = window.location.search;
+    let parameters = new URLSearchParams(qs);
+    let colorPalette1 = parameters.get("colorPalette1");
+    let colorPalette2 = parameters.get("colorPalette2");
+    let colorPalette3 = parameters.get("colorPalette3");
+
+    let useRandomColors = false;
+    let colorArray = [colorPalette1, colorPalette2, colorPalette3]
+    //7 is length of hex code, but it's not a perfect way to validate!
+    if(colorPalette1.length !== 7 || colorPalette2.length !== 7 || colorPalette3.length !== 7)
+    {
+        useRandomColors = true;
+    }
+
     function drawTriangle(context)
     {
         context.fillStyle = getRandomColor();
@@ -25,13 +39,20 @@
 
     function getRandomColor()
     {
-        let num1 = Math.floor(Math.random() * 255) + 1;
-        let num2 = Math.floor(Math.random() * 255) + 1;
-        let num3 = Math.floor(Math.random() * 255) + 1;
+        if(useRandomColors)
+        {
+            let num1 = Math.floor(Math.random() * 255) + 1;
+            let num2 = Math.floor(Math.random() * 255) + 1;
+            let num3 = Math.floor(Math.random() * 255) + 1;
 
-        let colorString = "rgb(" + num1 + ", " + num2 + ", " + num3 + ")";
+            let colorString = "rgb(" + num1 + ", " + num2 + ", " + num3 + ")";
 
-        return colorString;
+            return colorString;
+        }
+        else
+        {
+            return colorArray[Math.floor(Math.random() * 3)];
+        }
     }
 
     function getRandomVertex(max)
