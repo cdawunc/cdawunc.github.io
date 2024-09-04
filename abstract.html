@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <canvas id="kaleidoscopeCanvas" width="1920" height="1080">
+    <canvas id="abstractCanvas" width="1920" height="1080">
 <!--        Alternative text, accessible description of canvas-->
         Abstract art, generated with triangles of random size. Colors can be specified in the form on the home page, or can be left blank for random colors
     </canvas>
@@ -60,7 +60,7 @@
         return Math.floor(Math.random() * max) + 1;
     }
 
-    let canvas = document.getElementById("kaleidoscopeCanvas");
+    let canvas = document.getElementById("abstractCanvas");
     let context = canvas.getContext("2d");
     context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
