@@ -7,11 +7,8 @@ header{
 }
 
 article{
-    background-color: aquamarine;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 
-    animation-name: colorfade2;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
 
     padding: 10%;
     margin: 20%;
