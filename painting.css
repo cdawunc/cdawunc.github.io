@@ -1,0 +1,43 @@
+header{
+    background-color: lavender;
+
+    animation-name: colorfade1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+article{
+    background-color: aquamarine;
+
+    animation-name: colorfade2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+aside{
+    background-color: lavender;
+
+    animation-name: colorfade1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+footer{
+    background-color: aquamarine;
+
+    animation-name: colorfade2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes colorfade1 {
+    from {background-color: lavender;}
+    to {background-color: aquamarine;}
+}
+
+
+@keyframes colorfade2 {
+    from {background-color: aquamarine;}
+    to {background-color: lavender;}
+}
