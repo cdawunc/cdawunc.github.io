@@ -12,15 +12,11 @@ article{
     animation-name: colorfade2;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+
+    padding: 10%;
+    margin: 20%;
 }
 
-aside{
-    background-color: lavender;
-
-    animation-name: colorfade1;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-}
 
 footer{
     background-color: aquamarine;
