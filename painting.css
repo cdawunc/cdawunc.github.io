@@ -4,6 +4,8 @@ header{
     animation-name: colorfade1;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+
+    border: firebrick 2px dotted;
 }
 
 article{
