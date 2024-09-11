@@ -1,51 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+<html>
 
-  <style>
-    body{
-      background-color: #7BAFD4;
-    }
-    h1{
-      color: #13294B;
-    }
-    label{
-      color: #13294B;
-    }
-    input{
-      color: #13294B;
-    }
-    p{
-      color: #13294B;
-    }
-    #uncLogo{
-      height: 12em;
-    }
-  </style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" lang = "en" dir="ltr">
+        <meta name="author" content ="your name">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio of Web Work</title>
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
 
-<img src="unc.png" alt="UNC Logo" id="uncLogo">
-<h1>Charles's Abstract Art Experiment</h1>
+    <body>
+        <header>
+            <nav>
+                <ul id="nav-links">
+                    <li id="home"><a href="">Home</a></li>
+                    <li><a href="">About Me</a></li>
+                    <li><a href="">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1 id="page_title">Project Portfolio</h1>
+        <main id="projects-grid">
+            <article id="project1" class="project_item">
+                <h2 class="project_number"><a href="html_text_assignment/index.html">Title</a></h2>
+                <img class="project_image" src="images/home_image_1.png" alt="project 1 image" width="125" height="300"/>
+                <h3 class="project_title">My First Webpage using HTML</h3>
+                <p class="project_description">In this first project, I created a valid HTML5 webpage and formated text and images. </p>
+            </article>
+            <article id="project2" class="project_item">
+                <h2 class="project_number"><a href="early_internet_art/index.html">Title</a></h2>
+                <img class="project_image" src="images/home_image_2.png" alt="project 2 image" width="125" height="300"/>
+                <h3 class="project_title">Early Internet Art: Accessible Surfing</h3>
+                <p class="project_description">In this second project, I created a website inspired by Early Internet Art. </p>
+            </article>
+            <article id="project3" class="project_item">
+                <h2 class="project_number"><a href="">Title</a></h2>
+                <img class="project_image" src="https://dummyimage.com/125x300/3d3d3d/9e9e9e" alt="project 3 image" />
+                <h3 class="project_title">Laying out Layouts</h3>
+                <p class="project_description">In this third project, I built a responsive, educational website that reminded future me how to build a responsive website.</p>
+            </article>
+            <article id="project4" class="project_item">
+                <h2 class="project_number"><a href="./index.html">Title</a></h2>
+                <img class="project_image" src="https://dummyimage.com/125x300/3d3d3d/9e9e9e" alt="project 4 image" />
+                <h3 class="project_title">JavaScript: Simple Task</h3>
+                <p class="project_description">In this fourth project, I used JavaScript to do a certain Task.</p>
+            </article>
+            <article id="project5" class="project_item">
+                <h2 class="project_number"><a href="./index.html">Title</a></h2>
+                <img class="project_image" src="https://dummyimage.com/125x300/3d3d3d/9e9e9e" alt="project 5 image" />
+                <h3 class="project_title">Personal Website: To Brand or Not to Brand?</h3>
+                <p class="project_description">In this fifth project, I built a personal website that is pro-personal branding or anti-personal branding or ironic personal branding or anywhere in-between</p>
+            </article>
+            <article id="project6" class="project_item">
+                <h2 class="project_number"><a href="./index.html">Title</a></h2>
+                <img class="project_image" src="https://dummyimage.com/125x300/3d3d3d/9e9e9e" alt="project 6 image" />
+                <h3 class="project_title">Final Project: Re-Imagining the Internet</h3>
+                <p class="project_description">In the final project, I Incorporated all the skills I've learned in class to re-imagine a platform, site, or other interface of the internet.</p>
+            </article>
+        </main>
+        
 
-
-<p>Generate Abstract Art</p>
-<form action="abstract.html" method="get">
-  <label for="colorPalette1">First Color Code</label>
-  <input type="color" id="colorPalette1" name="colorPalette1" value="#7BAFD4">
-
-  <label for="colorPalette2">Second Color Code</label>
-  <input type="color" id="colorPalette2" name="colorPalette2" value="#13294B">
-
-  <label for="colorPalette3">Third Color Code</label>
-  <input type="color" id="colorPalette3" name="colorPalette3" value="#F8F8F8">
-
-  <input type="submit">
-</form>
-
-<p><a href="https://www.w3schools.com/html/html5_canvas.asp">Learn how to get started with the canvas tag, to create your own graphics</a></p>
-
-</body>
+        <footer>
+            <ul id="footer-items">
+                <li>&copy; 2024</li>
+                <li><a href="">put a link to something else or a quote</a></li>
+                <li><a href="unc.edu">Another link or quote spot</a></li>
+            </ul>
+        </footer>
+    </body>
 </html>
