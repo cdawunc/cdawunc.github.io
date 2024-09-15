@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="abstractCanvas" width="1920" height="1080">
+<!--        Alternative text, accessible description of canvas-->
+        Abstract art, generated with triangles of random size. Colors can be specified in the form on the home page, or can be left blank for random colors
+    </canvas>
+</body>
+
+<script type="text/javascript">
+
+    let qs = window.location.search;
+    let parameters = new URLSearchParams(qs);
+    let colorPalette1 = parameters.get("colorPalette1");
+    let colorPalette2 = parameters.get("colorPalette2");
+    let colorPalette3 = parameters.get("colorPalette3");
+
+    let useRandomColors = false;
+    let colorArray = [colorPalette1, colorPalette2, colorPalette3]
+    //7 is length of hex code, but it's not a perfect way to validate!
+    if(colorPalette1.length !== 7 || colorPalette2.length !== 7 || colorPalette3.length !== 7)
+    {
+        useRandomColors = true;
+    }
+
+    function drawTriangle(context)
+    {
+        context.fillStyle = getRandomColor();
+        let path=new Path2D();
+        path.moveTo(getRandomVertex(1920), getRandomVertex(1080));
+        path.lineTo(getRandomVertex(1920), getRandomVertex(1080));
+        path.lineTo(getRandomVertex(1920), getRandomVertex(1080));
+        context.fill(path);
+    }
+
+    function getRandomColor()
+    {
+        if(useRandomColors)
+        {
+            let num1 = Math.floor(Math.random() * 255) + 1;
+            let num2 = Math.floor(Math.random() * 255) + 1;
+            let num3 = Math.floor(Math.random() * 255) + 1;
+
+            let colorString = "rgb(" + num1 + ", " + num2 + ", " + num3 + ")";
+
+            return colorString;
+        }
+        else
+        {
+            return colorArray[Math.floor(Math.random() * 3)];
+        }
+    }
+
+    function getRandomVertex(max)
+    {
+        return Math.floor(Math.random() * max) + 1;
+    }
+
+    let canvas = document.getElementById("abstractCanvas");
+    let context = canvas.getContext("2d");
+    context.fillStyle = "black";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    for(let i=0;i<10000;i++)
+    {
+        drawTriangle(context);
+    }
+
+</script>
+</html>
