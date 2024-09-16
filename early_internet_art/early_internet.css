@@ -70,14 +70,6 @@ li{
     border-radius: 50%;
 }
 
-.progressCircle2 {
-    border: 5px solid white;
-    background: conic-gradient(from 0deg, red 0deg, palevioletred 90deg, lightpink 270deg, red 360deg);
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-}
-
 a{
     color: white;
 }
