@@ -1,5 +1,8 @@
 body{
     background-color: black;
+    background-image: linear-gradient(to right, #1e25ac 20%, #000 80.1%, #001 50.2%, #000 100%);
+    background-size: 100px 100px;
+    background-position: 0 0;
 }
 p{
     color: white;
@@ -19,52 +22,62 @@ h1{
 
 
 header {
-    background: skyblue;
+    /*background: skyblue;*/
     flex: 1 0 100%;
     order: 1;
 }
 main {
-    background: slategray;
+    /*background: slategray;*/
     order: 3;
     flex: 1 1 500px;
 }
 nav {
-    background: cadetblue;
+    /*background: cadetblue;*/
     order: 2;
     flex: 1 0 200px;
 }
 aside {
-    background: seagreen;
+    /*background: seagreen;*/
     order: 4;
     flex: 1 0 200px;
 }
 footer {
-    background: darkslateblue;
+    /*background: darkslateblue;*/
     flex: 1 0 100%;
     order: 5;
 }
+li{
+    color: white;
+}
 
 
-
-@keyframes fadeIn {
+@keyframes fadeAnimation {
     100% {
         opacity: 1;
     }
 }
 
-.fade {
-    animation: fadeIn 1s forwards;
+.fadeClass {
+    animation: fadeAnimation 3s forwards;
     opacity: 0;
 }
 
-.fade:nth-child(1) {
-    animation-delay: .5s;
+.progressCircle {
+    border: 5px solid white;
+    background: conic-gradient(from 0deg, red 0deg, palevioletred 90deg, lightpink 270deg, lightgreen 340deg);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
 }
 
-.fade:nth-child(2) {
-    animation-delay: 1s;
+.progressCircle2 {
+    border: 5px solid white;
+    background: conic-gradient(from 0deg, red 0deg, palevioletred 90deg, lightpink 270deg, red 360deg);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
 }
 
-.fade:nth-child(3) {
-    animation-delay: 1.5s;
+a{
+    color: white;
 }
