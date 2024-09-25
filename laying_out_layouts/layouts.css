@@ -15,17 +15,17 @@ header {
 main {
     /*background: slategray;*/
     order: 3;
-    flex: 1 1 500px;
+    flex: 1 0 500px;
 }
 nav {
     /*background: cadetblue;*/
     order: 2;
-    flex: 0.5 1 200px;
+    flex: 0 1 50px;
 }
 aside {
     /*background: seagreen;*/
     order: 4;
-    flex: 1 0 200px;
+    flex: 0 1 50px;
 }
 footer {
     /*background: darkslateblue;*/
@@ -82,8 +82,9 @@ footer {
 
 .gameContainer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    /*grid-template-rows: 40em;*/
+    width: 80%;
+    margin: auto;
+    justify-items: center;
 }
 
 @media screen and (max-width: 992px) {
