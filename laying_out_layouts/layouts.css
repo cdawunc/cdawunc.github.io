@@ -20,7 +20,7 @@ main {
 nav {
     /*background: cadetblue;*/
     order: 2;
-    flex: 1 0 200px;
+    flex: 0.5 1 200px;
 }
 aside {
     /*background: seagreen;*/
@@ -34,6 +34,7 @@ footer {
 }
 
 .gameBox{
+    text-align: center;
     width: 10em;
     height: 10em;
     margin: 1em;
@@ -42,6 +43,8 @@ footer {
 
 .number{
     display: none;
+    margin: auto;
+    line-Height: 10em;
 }
 
 .numberTwo{

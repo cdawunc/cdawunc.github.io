@@ -1,80 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layout Memory Game</title>
-  <link rel="stylesheet" href="layouts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Memory Game</title>
+    <link rel="stylesheet" href="layouts.css">
 </head>
 
 <body>
 <div class="container">
-  <header>
-    <hr>
-  </header>
-  <main>
-    <div class="gameContainer">
-      <div class="gameBox a" onclick="recordFunction('a')">
-        <p class="number numberOne">1</p>
-      </div>
-      <div class="gameBox b" onclick="recordFunction('b')">
-        <p class="number numberTwo">2</p>
-      </div>
-      <div class="gameBox c" onclick="recordFunction('c')">
-        <p class="number numberThree">3</p>
-      </div>
-      <div class="gameBox d" onclick="recordFunction('d')">
-        <p class="number numberFour">4</p>
-      </div>
-      <div class="gameBox e" onclick="recordFunction('e')">
-        <p class="number numberFive">5</p>
-      </div>
-      <div class="gameBox f" onclick="recordFunction('f')">
-        <p class="number numberSix">6</p>
-      </div>
-    </div>
-  </main>
-  <nav>
-  </nav>
-  <aside>
+    <header>
+        <hr>
+    </header>
+    <main>
+        <div class="gameContainer">
+            <div class="gameBox a" onclick="recordFunction('a')">
+                <p class="number numberOne">1</p>
+            </div>
+            <div class="gameBox b" onclick="recordFunction('b')">
+                <p class="number numberTwo">2</p>
+            </div>
+            <div class="gameBox c" onclick="recordFunction('c')">
+                <p class="number numberThree">3</p>
+            </div>
+            <div class="gameBox d" onclick="recordFunction('d')">
+                <p class="number numberFour">4</p>
+            </div>
+            <div class="gameBox e" onclick="recordFunction('e')">
+                <p class="number numberFive">5</p>
+            </div>
+            <div class="gameBox f" onclick="recordFunction('f')">
+                <p class="number numberSix">6</p>
+            </div>
+        </div>
+    </main>
+    <nav>
+    </nav>
+    <aside>
 
-  </aside>
-  <footer>
-  </footer>
+    </aside>
+    <footer>
+    </footer>
 </div>
 
 </body>
 </html>
 
 <script type="text/javascript">
-  let clickRecordArray = [];
+    let clickRecordArray = [];
 
-  function recordFunction(boxName)
-  {
-    clickRecordArray.push(boxName);
-    console.log(clickRecordArray);
-    testArray();
-  }
-
-  function testArray()
-  {
-    //Get last six click records from array, check if the clicks were executed in the correct order
-    if(arraysAreIdentical(clickRecordArray.slice(-6), ["a", "b", "c", "d", "e", "f"]))
-    {
-      alert("You win!!!");
+    function recordFunction(boxName) {
+        clickRecordArray.push(boxName);
+        console.log(clickRecordArray);
+        testArray();
     }
-  }
 
-  //Function taken from stackoverflow
-  //https://stackoverflow.com/questions/22395357/how-to-compare-two-arrays-are-equal-using-javascript
-
-  function arraysAreIdentical(arr1, arr2){
-    if (arr1.length !== arr2.length) return false;
-    for (var i = 0, len = arr1.length; i < len; i++){
-      if (arr1[i] !== arr2[i]){
-        return false;
-      }
+    function testArray() {
+        //Get last six click records from array, check if the clicks were executed in the correct order
+        if (arraysAreIdentical(clickRecordArray.slice(-6), ["a", "b", "c", "d", "e", "f"])) {
+            alert("You win!!!");
+        }
     }
-    return true;
-  }
+
+    //Function taken from stackoverflow
+    //https://stackoverflow.com/questions/22395357/how-to-compare-two-arrays-are-equal-using-javascript
+
+    function arraysAreIdentical(arr1, arr2) {
+        if (arr1.length !== arr2.length) return false;
+        for (var i = 0, len = arr1.length; i < len; i++) {
+            if (arr1[i] !== arr2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
 </script>
