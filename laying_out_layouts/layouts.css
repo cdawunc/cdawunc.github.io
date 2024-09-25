@@ -20,12 +20,12 @@ main {
 nav {
     /*background: cadetblue;*/
     order: 2;
-    flex: 0 1 50px;
+    flex: 0 1 0px;
 }
 aside {
     /*background: seagreen;*/
     order: 4;
-    flex: 0 1 50px;
+    flex: 0 1 0px;
 }
 footer {
     /*background: darkslateblue;*/
@@ -82,7 +82,7 @@ footer {
 
 .gameContainer{
     display: grid;
-    width: 80%;
+    width: 100%;
     margin: auto;
     justify-items: center;
 }
