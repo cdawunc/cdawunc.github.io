@@ -17,13 +17,13 @@
         <p style="color: white;">Click the boxes in the correct order as you dicover the numbers by zooming in or shrinking the window</p>
         <div class="gameContainer">
             <div class="gameBox a" onclick="recordFunction('a')">
-                <p class="number numberOne">1</p>
+                <p class="number numberOne">3</p>
             </div>
             <div class="gameBox b" onclick="recordFunction('b')">
-                <p class="number numberTwo">2</p>
+                <p class="number numberTwo">6</p>
             </div>
             <div class="gameBox c" onclick="recordFunction('c')">
-                <p class="number numberThree">3</p>
+                <p class="number numberThree">2</p>
             </div>
             <div class="gameBox d" onclick="recordFunction('d')">
                 <p class="number numberFour">4</p>
@@ -32,7 +32,7 @@
                 <p class="number numberFive">5</p>
             </div>
             <div class="gameBox f" onclick="recordFunction('f')">
-                <p class="number numberSix">6</p>
+                <p class="number numberSix">1</p>
             </div>
         </div>
     </main>
@@ -59,7 +59,7 @@
 
     function testArray() {
         //Get last six click records from array, check if the clicks were executed in the correct order
-        if (arraysAreIdentical(clickRecordArray.slice(-6), ["a", "b", "c", "d", "e", "f"])) {
+        if (arraysAreIdentical(clickRecordArray.slice(-6), ["f", "c", "a", "d", "e", "b"])) {
             alert("You win!!!");
         }
     }
