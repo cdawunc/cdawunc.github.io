@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+}
+p{
+    color: white;
+}
+h1{
+    color: white;
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+header {
+    /*background: skyblue;*/
+    flex: 1 0 100%;
+    order: 1;
+}
+main {
+    /*background: slategray;*/
+    order: 3;
+    flex: 1 1 500px;
+}
+nav {
+    /*background: cadetblue;*/
+    order: 2;
+    flex: 1 0 200px;
+}
+aside {
+    /*background: seagreen;*/
+    order: 4;
+    flex: 1 0 200px;
+}
+footer {
+    /*background: darkslateblue;*/
+    flex: 1 0 100%;
+    order: 5;
+}
+li{
+    color: white;
+}
+
+
+a{
+    color: white;
+}

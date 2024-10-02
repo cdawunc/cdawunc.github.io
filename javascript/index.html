@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Charting Application</title>
+  <link rel="stylesheet" href="javascript_task.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="stock_chart.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <hr>
+    </header>
+    <main>
+      <div>
+        <input type="text" id="tickerSymbol" value="IBM">
+        <button onclick="populateChart()">Render Chart</button>
+      </div>
+      <div>
+        <canvas id="stockChart"></canvas>
+      </div>
+    </main>
+    <nav>
+    </nav>
+    <aside>
+
+    </aside>
+    <footer>
+    </footer>
+  </div>
+
+</body>
+</html>
+
+<script>
+  async function populateChart()
+  {
+    let tickerSymbol = document.getElementById("tickerSymbol").value
+    let stockData = await getStockData(tickerSymbol)
+    const chartContext = document.getElementById("stockChart")
+
+    //got assistance on how to redraw already rendered charts here
+    //https://stackoverflow.com/questions/40056555/destroy-chart-js-bar-graph-to-redraw-other-graph-in-same-canvas
+    let chartStatus = Chart.getChart("stockChart"); // <canvas> id
+    if (chartStatus != undefined) {
+      chartStatus.destroy()
+    }
+
+
+    //Loosely copied from here
+    //https://www.chartjs.org/docs/latest/getting-started/
+    new Chart(chartContext, {
+      type: 'bar',
+      data: {
+        labels: stockData[0],
+        datasets: [{
+          label: 'Stock Price',
+          data: stockData[1],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    })
+  }
+
+  populateChart()
+
+</script>
