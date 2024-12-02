@@ -1,0 +1,205 @@
+<!--Chat GPT used for basic layout and css creation, tweaks and javascript handwritten-->
+<!--Planning to replace most of the GPT code as I finish up-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/Joe12387/detectIncognito@main/dist/es5/detectIncognito.min.js"></script>
+</head>
+<body>
+
+
+<div id="popup-block-container">
+    <p>View John's full profile</p>
+    <button>Sign up and give us all your data</button>
+</div>
+
+<div class="profile-container" id="profile-container">
+    <!-- Profile Header -->
+    <div class="header">
+        <div class="profile-picture">
+            <img src="profile-pic.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-details">
+            <h1>John Doe</h1>
+            <p>Software Engineer at TechCorp</p>
+            <p class="location">San Francisco, CA</p>
+            <button class="connect-btn">Connect</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h2>About</h2>
+        <p>Experienced software engineer with a passion for building innovative solutions. Skilled in JavaScript, Python, and cloud technologies.</p>
+    </div>
+
+    <!-- Experience Section -->
+    <div class="experience-section">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Software Engineer at TechCorp</h3>
+            <p class="duration">Jan 2020 - Present</p>
+            <p>Developing cutting-edge web applications using modern JavaScript frameworks and cloud technologies.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Junior Developer at WebSolutions</h3>
+            <p class="duration">Jun 2017 - Dec 2019</p>
+            <p>Worked on full-stack development and improved website performance for various clients.</p>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills-section">
+        <h2>Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Cloud Computing</li>
+            <li>Web Development</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+
+        background-image: url("background.jpg");
+        background-size: cover;
+    }
+
+    .profile-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    .profile-details h1 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    .profile-details p {
+        margin-bottom: 5px;
+        color: #777;
+    }
+
+    .location {
+        font-size: 14px;
+        color: #888;
+    }
+
+    .connect-btn {
+        background-color: #0073b1;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .connect-btn:hover {
+        background-color: #005f8a;
+    }
+
+    .about-section, .experience-section, .skills-section {
+        margin-bottom: 20px;
+    }
+
+    .about-section h2, .experience-section h2, .skills-section h2 {
+        font-size: 20px;
+        color: #0073b1;
+        margin-bottom: 10px;
+    }
+
+    .experience-item {
+        margin-bottom: 15px;
+    }
+
+    .experience-item h3 {
+        font-size: 18px;
+        color: #333;
+    }
+
+    .experience-item .duration {
+        font-size: 14px;
+        color: #777;
+    }
+
+    .skills-section ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .skills-section ul li {
+        background-color: #f4f4f4;
+        padding: 8px;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        color: #333;
+    }
+
+
+    #popup-block-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 20%;
+        background-color: white;
+        width: 300px;
+        height: 300px;
+        left: 35%;
+
+    }
+
+</style>
+
+<script type="text/javascript">
+    detectIncognito().then((result) => {
+        console.log(result.browserName, result.isPrivate);
+
+        if(!result.isPrivate)
+        {
+            // document.getElementById("popup-block-container").style.display = "";
+            document.getElementById("profile-container").remove();
+        }
+        else
+        {
+            document.getElementById("popup-block-container").remove();
+        }
+
+    });
+</script>
