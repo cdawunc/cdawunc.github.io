@@ -35,7 +35,7 @@ async function callGoogleGemini(base64String) {
         body: JSON.stringify({
             contents: [
                 {
-                    parts: [{text: "do a formal art analysis of this image"}, {
+                    parts: [{text: document.getElementById("promptTextArea").value}, {
                         inline_data: {
                             mime_type: "image/png",
                             data: base64String

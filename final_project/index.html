@@ -45,7 +45,7 @@
         <hr>
         <main>
 
-<!--            Images taken from the NCMA website-->
+<!--            Images and art details taken from the NCMA website-->
 
 <!--            Images are wrapped in carousel library markup so they can be flipped through-->
 
@@ -53,8 +53,7 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-
-                            <flip-card variant="click" class="imageCard">
+                            <flip-card variant="click" class="imageCard1">
                                 <div slot="front">
                                     <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
                                 </div>
@@ -79,16 +78,65 @@
                             </flip-card>
                         </li>
                         <li class="splide__slide">
-                            <img src="art_images/dog_effigy.jpg" id="image2" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
+                            <flip-card variant="click" class="imageCard2">
+                                <div slot="front">
+                                    <img src="art_images/dog_effigy.jpg" id="image2" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
+                                </div>
+                                <div slot="back">
+                                    <table style="color: black; font-size: 36px; margin: auto; padding-top: 80px; padding-left: 20px;">
+                                        <tbody>
+                                        <tr>
+                                            <td>Title</td>
+                                            <td>Dog Effigy</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>circa 200 B.C.E.–300 C.E</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Artist: </td>
+                                            <td>Unknown Colima Artist (West Mexican, Colima state)</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </flip-card>
                         </li>
                         <li class="splide__slide">
-                            <img src="art_images/station_abstract.jpg" id="image3" style="width: 50%; margin-left: auto; margin-right: auto; display: block;"/>
+                            <flip-card variant="click" class="imageCard3">
+                                <div slot="front">
+                                    <img src="art_images/station_abstract.jpg" id="image3" style="width: 50%; margin-left: auto; margin-right: auto; display: block;"/>
+                                </div>
+                                <div slot="back">
+                                    <table style="color: black; font-size: 36px; margin: auto; padding-top: 80px; padding-left: 20px;">
+                                        <tbody>
+                                        <tr>
+                                            <td>Title</td>
+                                            <td>Station</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>1985</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Artist: </td>
+                                            <td>Gerhard Richter</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medium:</td>
+                                            <td>Oil on canvas</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </flip-card>
                         </li>
                     </ul>
                 </div>
             </section>
 
             <br>
+<!--            I experimented with a lot of different prompts, but this specific one generally seems to work best-->
             <textarea id="promptTextArea">Perform a formal art analysis of this image</textarea>
             <br>
 
