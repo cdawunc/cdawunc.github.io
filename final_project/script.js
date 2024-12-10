@@ -1,6 +1,6 @@
 
 
-
+//Convert the image to base64 using the canvas tag and then send the image to Gemini
 async function convertImageToBase64(imageElementID)
 {
     document.getElementById("spinner").style.display = "inline-block";
@@ -25,6 +25,9 @@ async function convertImageToBase64(imageElementID)
 }
 
 
+//Send image to Google Gemini and display result for user
+//Google Gemini was carefully selected for this project
+//ChatGPT Image Processing models did not seem to work nearly as well for this purpose
 async function callGoogleGemini(base64String) {
     const GEMINI_API_KEY = "AIzaSyCoBUheFs36iCw6mrk7tPHpW1kedonNq-U"
     const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
@@ -48,17 +51,15 @@ async function callGoogleGemini(base64String) {
                 data: data,
             })
         ).then(res => {
+            //Extract text from Gemini response JSON and display it for the user
             document.getElementById("geminiResponse").innerText = res.data.candidates[0].content.parts[0].text;
             console.log(res.data.candidates[0].content.parts[0].text)
+            //Hide the spinner now that processing is done
             document.getElementById("spinner").style.display = "none";
         }));
 
 
 }
-
-document.addEventListener("DOMContentLoaded", function(event){
-    // convertImageToBase64().then(r => function (){});
-});
 
 
 //Detect which image/slide is currently visible and return the corresponding filename

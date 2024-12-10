@@ -25,6 +25,7 @@
         document.addEventListener("DOMContentLoaded", function(event){
             let splide = new Splide( '.splide', {
                 type: 'loop',
+                height: '500px'
                 // autoWidth: true,
                 // autoHeight: true
             }).mount();
@@ -48,6 +49,8 @@
 <!--            Images and art details taken from the NCMA website-->
 
 <!--            Images are wrapped in carousel library markup so they can be flipped through-->
+
+<!--            Images are also wrapped with a card library markup so they can be flipped over-->
 
             <section class="splide" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
@@ -140,6 +143,7 @@
             <textarea id="promptTextArea">Perform a formal art analysis of this image</textarea>
             <br>
 
+<!--            Converting the image to base 64 is the first step, and has to be done asynchronously, this kickstarts sending the image to Gemini-->
             <button id="callGeminiButton" onclick="convertImageToBase64()">Call Gemini
                 <i id="spinner" class="fa-solid fa-spin fa-spinner" style="color: #63E6BE; display: none;"></i>
             </button>
