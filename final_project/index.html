@@ -2,15 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Title</title>
 
     <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="final_project.css">
+    <script src="https://kit.fontawesome.com/d9b20134e6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 50%; height: 50%;"/>
-    <br>
-    <textarea id="promptTextArea">Perform a formal art analysis of this image</textarea>
-    <button id="callGeminiButton" onclick="convertImageToBase64()">Call Gemini</button>
-    <p id="geminiResponse"></p>
+    <div class="container">
+        <header>
+
+        </header>
+        <main>
+            <div id="artContainer">
+                <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 50%; height: 50%; margin-left: auto; margin-right: auto; display: block;"/>
+                <br>
+                <textarea id="promptTextArea">Perform a formal art analysis of this image</textarea>
+                <button id="callGeminiButton" onclick="convertImageToBase64()">Call Gemini
+                    <i id="spinner" class="fa-solid fa-spin fa-spinner" style="color: #63E6BE; display: none;"></i>
+                </button>
+                <p id="geminiResponse"></p>
+            </div>
+        </main>
+        <nav>
+
+        </nav>
+        <aside>
+
+        </aside>
+        <footer>
+
+        </footer>
+    </div>
 </body>
 </html>

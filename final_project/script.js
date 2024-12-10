@@ -1,5 +1,7 @@
 async function convertImageToBase64(imageElementID)
 {
+    document.getElementById("spinner").style.display = "inline-block";
+
     // const img = document.getElementById(imageElementID);
     //
     // console.log(img);
@@ -45,14 +47,15 @@ async function callGoogleGemini(base64String) {
         ).then(res => {
             document.getElementById("geminiResponse").innerText = res.data.candidates[0].content.parts[0].text;
             console.log(res.data.candidates[0].content.parts[0].text)
+            document.getElementById("spinner").style.display = "none";
         }));
 
 
 }
 
-document.addEventListener("DOMContentLoaded", function(event){
-    convertImageToBase64().then(r => function (){});
-});
+// document.addEventListener("DOMContentLoaded", function(event){
+//     convertImageToBase64().then(r => function (){});
+// });
 
 
 
