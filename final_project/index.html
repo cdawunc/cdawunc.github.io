@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="https://kit.fontawesome.com/d9b20134e6.js" crossorigin="anonymous"></script>
+    <script src="http://unpkg.com/flip-card-wc/dist/flip-card-wc.js"></script>
 
 
     <script>
@@ -52,7 +53,30 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
+
+                            <flip-card variant="click" class="imageCard">
+                                <div slot="front">
+                                    <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
+                                </div>
+                                <div slot="back">
+                                    <table style="color: black; font-size: 36px; margin: auto; padding-top: 80px; padding-left: 20px;">
+                                        <tbody>
+                                            <tr>
+                                                <td>Title</td>
+                                                <td>Crown II: The Law of Kindness – Spirit of Ecstasy (Triptych), Portrait of Sanje James, Local Artist and Photographer</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date</td>
+                                                <td>2024</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Artist: </td>
+                                                <td>JP Jermaine Powell</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </flip-card>
                         </li>
                         <li class="splide__slide">
                             <img src="art_images/dog_effigy.jpg" id="image2" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
