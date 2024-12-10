@@ -1,4 +1,4 @@
-<!--Google Gemini used for basic layout and css creation: tweaks, javascript, content handwritten-->
+<!--Google Gemini used for basic layout and css creation: tweaks, javascript, content, authwall handwritten-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,21 +19,23 @@
 <div class="profile-container" id="profile-container">
     <!-- Profile Header -->
     <div class="header">
-        <div class="profile-picture">
-            <img src="profile-pic.jpg" alt="Profile Picture">
+        <div class="profile-picture" style="font-size: 30px; padding-right: 40px">
+            🤩
         </div>
         <div class="profile-details">
             <h1>Charles Daw</h1>
             <p>Software Engineer at Soulless Corporation</p>
             <p class="location">Research Triangle Park</p>
-            <button class="connect-btn">Network With Me For Maximum Synergy</button>
+            <button class="connect-btn" onclick="displayAnimation()">Network With Me For Maximum Synergy</button>
         </div>
     </div>
+
+
 
     <!-- About Section -->
     <div class="about-section">
         <h2>About</h2>
-        <p>Budding software engineer with a penchant for backend developemnt.</p>
+        <p>Budding software engineer with a penchant for backend development.</p>
     </div>
 
     <!-- Experience Section -->
@@ -57,7 +59,7 @@
         <ul>
             <li>JavaScript</li>
             <li>Python</li>
-            <li>Cloud Computing</li>
+            <li>AI</li>
             <li>Web Development</li>
         </ul>
     </div>
@@ -173,15 +175,10 @@
 
 
     #popup-block-container {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 20%;
         background-color: white;
         width: 300px;
         height: 300px;
-        left: 35%;
-
+        margin: 100px auto auto;
     }
 
 </style>
@@ -190,6 +187,7 @@
     //LinkedIn has changed the behavior of their authwall code several times, so this probably isn't the case currently,
     //but at one point it was possible to bypass the authwall merely by using incognito mode
     //authwalls are a pet peeve of mine, so I wanted to emulate that behavior here with a library that detects incognito mode
+    //Behavior is untested on Safari as I did not have access to a Mac
     detectIncognito().then((result) => {
         console.log(result.browserName, result.isPrivate);
 
@@ -204,4 +202,25 @@
         }
 
     });
+
+
+    //Clear the body and replace it with an unamused emoji if you click the synergy button
+    function displayAnimation()
+    {
+        document.body.innerHTML = "<div id='animationDiv' style='background: black;'><div style='margin-left: auto; margin-right: auto;'>😒</div></div>"
+        document.getElementById("animationDiv").style.visibility = "visible";
+
+        for(let i = 0; i <= 1000; i++)
+        {
+            setTimeout(zoomText, 10*i, i);
+        }
+    }
+
+    function zoomText(iterationCount)
+    {
+        let newFontSize = iterationCount*5;
+        newFontSize = newFontSize.toString();
+
+        document.getElementById("animationDiv").style.fontSize = newFontSize + "px";
+    }
 </script>
