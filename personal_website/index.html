@@ -1,4 +1,4 @@
-<!--Chat GPT used for basic layout and css creation, tweaks and javascript handwritten-->
+<!--Google Gemini used for basic layout and css creation, tweaks, javascript, content handwritten-->
 <!--Planning to replace most of the GPT code as I finish up-->
 <!DOCTYPE html>
 <html lang="en">
@@ -188,6 +188,9 @@
 </style>
 
 <script type="text/javascript">
+    //LinkedIn has changed the behavior of their authwall code several times, so this probably isn't the case currently,
+    //but at one point it was possible to bypass the authwall merely by using incognito mode
+    //authwalls are a pet peeve of mine, so I wanted to emulate that behavior here with a library that detects incognito mode
     detectIncognito().then((result) => {
         console.log(result.browserName, result.isPrivate);
 
