@@ -21,7 +21,7 @@ async function convertImageToBase64(imageElementID)
 
         callGoogleGemini(canvas.toDataURL().split(',')[1]);
     }
-    img.src = "art_images/spirit_of_ecstasy.jpg"
+    img.src = detectWhichSlideVisibleAndReturnFilename();
 }
 
 
@@ -60,6 +60,25 @@ document.addEventListener("DOMContentLoaded", function(event){
     // convertImageToBase64().then(r => function (){});
 });
 
+
+//Detect which image/slide is currently visible and return the corresponding filename
+//Loop and array could be used if there were more slides
+function detectWhichSlideVisibleAndReturnFilename()
+{
+    if(document.getElementById("splide01-slide01").classList.contains("is-visible"))
+    {
+        return "art_images/spirit_of_ecstasy.jpg";
+    }
+    else if(document.getElementById("splide01-slide02").classList.contains("is-visible"))
+    {
+        return "art_images/dog_effigy.jpg";
+    }
+    else if(document.getElementById("splide01-slide03").classList.contains("is-visible"))
+    {
+        return "art_images/station_abstract.jpg";
+    }
+    return false;
+}
 
 
 

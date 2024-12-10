@@ -6,6 +6,10 @@
 
     <title>Title</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="final_project.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
@@ -13,20 +17,36 @@
     <script type="text/javascript" src="script.js"></script>
     <script src="https://kit.fontawesome.com/d9b20134e6.js" crossorigin="anonymous"></script>
 
+
     <script>
-        // import Splide from '@splidejs/splide';
+        //Initalize carousel library after DOM content finishes loading.
+        //Won't work properly if the images and other content hasn't loaded yet.
         document.addEventListener("DOMContentLoaded", function(event){
-            new Splide( '.splide' ).mount();
+            let splide = new Splide( '.splide', {
+                type: 'loop',
+                // autoWidth: true,
+                // autoHeight: true
+            }).mount();
+
+
+            //Bind event handler, clear out Google Gemini API response text when moving to a new image
+            splide.on( 'move', function () {
+                document.getElementById("geminiResponse").innerText = "";
+            } );
         });
     </script>
 </head>
 <body>
     <div class="container">
         <header>
-
+            <h1>//AI Guided Art Experiment</h1>
         </header>
+        <hr>
         <main>
 
+<!--            Images taken from the NCMA website-->
+
+<!--            Images are wrapped in carousel library markup so they can be flipped through-->
 
             <section class="splide" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
@@ -34,14 +54,20 @@
                         <li class="splide__slide">
                             <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
                         </li>
-                        <li class="splide__slide">Slide 02</li>
-                        <li class="splide__slide">Slide 03</li>
+                        <li class="splide__slide">
+                            <img src="art_images/dog_effigy.jpg" id="image2" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="art_images/station_abstract.jpg" id="image3" style="width: 50%; margin-left: auto; margin-right: auto; display: block;"/>
+                        </li>
                     </ul>
                 </div>
             </section>
 
             <br>
             <textarea id="promptTextArea">Perform a formal art analysis of this image</textarea>
+            <br>
+
             <button id="callGeminiButton" onclick="convertImageToBase64()">Call Gemini
                 <i id="spinner" class="fa-solid fa-spin fa-spinner" style="color: #63E6BE; display: none;"></i>
             </button>
