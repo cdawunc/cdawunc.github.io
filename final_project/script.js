@@ -1,3 +1,6 @@
+
+
+
 async function convertImageToBase64(imageElementID)
 {
     document.getElementById("spinner").style.display = "inline-block";
@@ -53,9 +56,9 @@ async function callGoogleGemini(base64String) {
 
 }
 
-// document.addEventListener("DOMContentLoaded", function(event){
-//     convertImageToBase64().then(r => function (){});
-// });
+document.addEventListener("DOMContentLoaded", function(event){
+    // convertImageToBase64().then(r => function (){});
+});
 
 
 

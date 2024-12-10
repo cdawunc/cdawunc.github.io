@@ -6,9 +6,19 @@
 
     <title>Title</title>
 
-    <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="final_project.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <script src="https://kit.fontawesome.com/d9b20134e6.js" crossorigin="anonymous"></script>
+
+    <script>
+        // import Splide from '@splidejs/splide';
+        document.addEventListener("DOMContentLoaded", function(event){
+            new Splide( '.splide' ).mount();
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -16,15 +26,27 @@
 
         </header>
         <main>
-            <div id="artContainer">
-                <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 50%; height: 50%; margin-left: auto; margin-right: auto; display: block;"/>
-                <br>
-                <textarea id="promptTextArea">Perform a formal art analysis of this image</textarea>
-                <button id="callGeminiButton" onclick="convertImageToBase64()">Call Gemini
-                    <i id="spinner" class="fa-solid fa-spin fa-spinner" style="color: #63E6BE; display: none;"></i>
-                </button>
-                <p id="geminiResponse"></p>
-            </div>
+
+
+            <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img src="art_images/spirit_of_ecstasy.jpg" id="image1" style="width: 75%; margin-left: auto; margin-right: auto; display: block;"/>
+                        </li>
+                        <li class="splide__slide">Slide 02</li>
+                        <li class="splide__slide">Slide 03</li>
+                    </ul>
+                </div>
+            </section>
+
+            <br>
+            <textarea id="promptTextArea">Perform a formal art analysis of this image</textarea>
+            <button id="callGeminiButton" onclick="convertImageToBase64()">Call Gemini
+                <i id="spinner" class="fa-solid fa-spin fa-spinner" style="color: #63E6BE; display: none;"></i>
+            </button>
+            <p id="geminiResponse"></p>
+
         </main>
         <nav>
 
